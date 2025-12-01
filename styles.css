@@ -1,1 +1,144 @@
+:root {
+  --bg: #f5f5f7;
+  --card-bg: #ffffff;
+  --text: #222222;
+  --muted: #666666;
+  --border: #dddddd;
+  --accent: #111111;
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+.page-header {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.intro {
+  margin-top: 0.75rem;
+  max-width: 70ch;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Galería responsive */
+
+.gallery {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr; /* móvil: una columna */
+  margin-top: 2rem;
+}
+
+/* Tablet y arriba: dos columnas */
+@media (min-width: 640px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Escritorio ancho: tres columnas */
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Miniaturas controladas */
+.card img {
+  display: block;
+  width: 100%;
+  height: 360px;     /* altura vertical estilo 3:4 */
+  object-fit: cover; /* recorte elegante y sin distorsión */
+  border-bottom: 1px solid var(--border);
+  box-shadow: inset 0 1px 8px rgba(0,0,0,0.25);
+}
+
+
+/* Bloque de texto dentro de la tarjeta */
+.card figcaption {
+  padding: 0.9rem 1rem 1rem;
+}
+
+.card h2 {
+  font-size: 1rem;
+  margin: 0 0 0.25rem;
+  font-weight: 500;
+}
+
+.meta {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.7rem;
+}
+
+.actions {
+  margin-top: 0.4rem;
+}
+
+.button {
+  display: inline-block;
+  font-size: 0.8rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--accent);
+  background: transparent;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.1s ease;
+}
+
+.button:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Footer */
+
+.page-footer {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
