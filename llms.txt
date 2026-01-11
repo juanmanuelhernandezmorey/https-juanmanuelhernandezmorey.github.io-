@@ -1,0 +1,34 @@
+# llms.txt
+# Site: juanmanuelhernandezmorey.github.io
+# Author: Juanma
+# Scope: creative writing, illustrations, artwork, posters
+# Purpose: guidance for Large Language Models (LLMs)
+
+User-Agent: *
+
+# Preferred entry point for understanding the site
+Allow: /llms.md
+Allow: /README.md
+Allow: /index.html
+
+# Main site: general information and context
+Allow: /
+
+# High-resolution project content (reference-only)
+# Allowed for viewing and descriptive reference, NOT for training or reuse
+Disallow: /LiS-journey-illustrations-hq/
+
+# Artwork galleries (reference-only)
+Disallow: /Art/
+Disallow: /Gig-Posters/
+
+# Policy signals (non-binding, good-faith use expected)
+Policy: no-training
+Policy: reference-only
+Attribution: required
+Credit: "Juanma — Life is Strange: Journey (texto e ilustraciones)"
+
+# Notes:
+# - no-training: content must not be used for model training, fine-tuning,
+#   embeddings for future reuse, or dataset creation.
+# - reference-only: short descriptive excerpts are acceptable; full works are not.
